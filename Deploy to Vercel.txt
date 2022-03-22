@@ -1,0 +1,22 @@
+0) Стоять в папке проекта /02.github-finder.
+
+1) В .gitignore добавить .env
+
+2) Инициализация локального репозитория:
+ git init
+
+3) Индексация локальных изменений:
+ git add .
+
+4) Начальный коммит:
+ git commit -m 'initial'
+
+5) Создать репозиторий на (https://github.com/OLEGB2012/github-finder).
+
+6) Связываем псевдоним origin с удаленным репозиторием:
+ git remote add origin https://github.com/OLEGB2012/github-finder.git
+
+7) Публикуем репозиторий на GitHub (первый раз с ключем -u):
+ git push -u origin master
+
+8)

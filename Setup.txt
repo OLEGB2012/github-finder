@@ -1,0 +1,77 @@
+ПРИМЕЧАНИЕ: Смотреть замечания по фиксам на странице https://github.com/bradtraversy/github-finder-app.
+-----------
+0) Создать проект:
+ > npx create-react-app 02.github-finder --use-npm
+ > cd 02.github-finder
+
+1) Установка TailWindCSS:
+ > npm list react-scripts
+...
+`-- react-scripts@5.0.0
+Команда дала версию 5, поэтому следуем инструкциям для версии 3 фреймворка TailWindCSS на странице
+https://tailwindcss.com/docs/guides/create-react-app:
+- Устанавить tailwindcss с зависимостями:
+ > npm install -D tailwindcss postcss autoprefixer
+- Инициализировать настройки фреймворка tailwindcss:
+ > npx tailwindcss init -p
+- Настройка путей к шаблонам в файле tailwind.config.js:
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+  ...
+}
+- Добавить директивы подключения фреймворка в ./src/index.css:
+ @tailwind base;
+ @tailwind components;
+ @tailwind utilities;
+ ...
+
+2) Установка daisyUI (библиотека компонент на основе tailwindcss) - https://daisyui.com/
+ > npm i daisyui
+- Подключить плагин в файле tailwind.config.js:
+  module.exports = {
+    ...
+    plugins: [require('daisyui')],
+  }
+
+3) Проверка:
+- В App.js приводим к виду:
+function App() {
+  return (
+    <div className='bg-purple-500'>
+      <h1 className='text-xl'>Hello World</h1>
+      <button className='btn'>Click</button>
+    </div>
+  );
+}
+export default App;
+
+- Включаем 'темную' тему из daisyui в файле index.html:
+ <!DOCTYPE html>
+ <html lang="en" data-theme="dark">
+   ...
+ </html>
+
+- Удаляем ненужные файлы:
+-- App.css, App.test.js, logo.svg, reportWebVitals.js, setupTests.js;
+-- В index.js удаляем упоминание reportWebVitals.
+  import React from 'react';
+  import ReactDOM from 'react-dom';
+  import './index.css';
+  import App from './App';
+
+  ReactDOM.render(
+    <React.StrictMode>
+      <App/>
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
+
+4) Дополнительные пакеты:
+ > npm i react-router-dom react-icons axios
+
+- Запускаем приложение:
+ > npm run start
+
+ 5) https://github.com/settings/tokens - персональный токен доступа к API (см. .env).
