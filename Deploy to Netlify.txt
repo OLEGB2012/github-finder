@@ -1,0 +1,36 @@
+0) Стоять в папке проекта /02.github-finder.
+
+1) В .gitignore добавить .env
+
+2) Инициализация локального репозитория:
+ git init
+
+3) Индексация локальных изменений:
+ git add .
+
+4) Начальный коммит:
+ git commit -m 'initial'
+
+5) Создать репозиторий на (https://github.com/OLEGB2012/github-finder).
+
+6) Связываем псевдоним origin с удаленным репозиторием:
+ git remote add origin https://github.com/OLEGB2012/github-finder.git
+
+7) Публикуем репозиторий на GitHub (первый раз с ключем -u):
+ git push -u origin master
+
+8) Входим через GitHub на https://app.netlify.com/login.
+
+9) В настройках аккаунта на GitHub настроить доступ к репозиторию со стороны приложения Netlify. Для этого
+   идем в раздел настроек аккаунта https://github.com/settings/installations и нажать Configure на строке с Netlify.
+   На странице конфигурации крутим вниз и добавляем через поиск репозиторий github-finder. Теперь он будет доступен
+   для выбора на Netlify при выборе репо для деплоя.
+
+10) На Netlify переходим в раздел Sites https://app.netlify.com/teams/olegb2012/sites.
+    Выполняем Import from Git(выбираем GitHub), авторизуемся на GitHub, выбираем репозиторий github-finder. Далее
+    принимаем как есть параметры на странице настроек сайта и нажимаем Deploy site.
+
+11) Настроить переменные окружения из .env. Зайти в настройки сайта Site settings > Build & deploy > Environment > Environment variables.
+    После этого передеплоить приложение, чтобы стали заметны переменные окружения (https://app.netlify.com/sites/shimmering-tanuki-8f7dee/deploys).
+
+12) https://shimmering-tanuki-8f7dee.netlify.app/ - сайт приложения онлайн.
